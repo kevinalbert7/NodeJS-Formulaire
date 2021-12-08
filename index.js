@@ -9,14 +9,15 @@ app.set("view engine", "handlebars")
 app.use(express.urlencoded({ extended: true }))
 
 app.get("/", (req, res) => {
+    res.render('form')
+})
+
+app.post('/form/signup', (req, res) => {
+    console.log(req.body)
+    // res.redirect('/home')
     res.render('home')
 })
 
-// app.post('/form/signup', (req, res) => {
-//     console.log(req.body)
-// })
-
-// res.redirect('/http://localhost:5000/home')
     
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)
