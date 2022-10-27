@@ -1,8 +1,8 @@
 const express = require("express")
 const app = express()
+const engine = require("express-handlebars").engine
 const port = 5000
 
-const engine = require("express-handlebars").engine
 app.engine("handlebars", engine())
 app.set("view engine", "handlebars")
 
